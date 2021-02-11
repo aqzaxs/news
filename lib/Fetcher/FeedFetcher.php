@@ -324,7 +324,12 @@ class FeedFetcher implements IFeedFetcher
         if (!$getFavicon) {
             return $newFeed;
         }
-        $favicon = $this->faviconFactory->get($url);
+        $favicon = $feed->getLogo();
+
+        if (is_null($favicon)) {
+            $favicon = $this->faviconFactory->get($url);
+        }
+
         $newFeed->setFaviconLink($favicon);
 
         return $newFeed;
