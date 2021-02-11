@@ -100,7 +100,6 @@ class FeedFetcher implements IFeedFetcher
     public function fetch(
         string $url,
         bool $favicon,
-        ?string $lastModified,
         bool $fullTextEnabled,
         ?string $user,
         ?string $password
